@@ -179,20 +179,20 @@ mean_predicted_y_val = predict(x_val, mean_linear_model)
 mean_rmse = rmse(y_val.values, mean_predicted_y_val)
 print(mean_rmse)
 
-# %% Q4 - Question 4 - Now let's train a regularized linear regression.
+# %% Q4 - Now let's train a regularized linear regression.
 # For this question, fill the NAs with 0.
 # Try different values of r from this list: [0, 0.000001, 0.0001, 0.001, 0.01, 0.1, 1, 5, 10].
 # Use RMSE to evaluate the model on the validation dataset.
 # Round the RMSE scores to 2 decimal digits.
 # Which r gives the best RMSE?
 multipliers = [0, 0.000001, 0.0001, 0.001, 0.01, 0.1, 1, 5, 10]
-rmses_multipliers = dict()
+rmse_per_multiplier = dict()
 for multiplier in multipliers:
     model = train_linear_regression_reg(x_train.fillna(0).values, y_train.values, r=multiplier)
     model_prediction_val = predict(x_val, model)
     model_rmse = rmse(y_val.values, model_prediction_val)
-    rmses_multipliers[multiplier] = model_rmse
-print(rmses_multipliers)
+    rmse_per_multiplier[multiplier] = model_rmse
+print(rmse_per_multiplier)
 
 # %% Q5 - We used seed 42 for splitting the data. Let's find out how selecting the seed influences our score.
 # Try different seed values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].
@@ -202,14 +202,14 @@ print(rmses_multipliers)
 # What's the standard deviation of all the scores? To compute the standard deviation, use np.std.
 # Round the result to 3 decimal digits (round(std, 3))
 seeds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-rmses_seeds = dict()
+rmse_per_seed = dict()
 for seed in seeds:
     x_train, x_val, x_test, y_train, y_val, y_test = prepare_validation_framework(df, random_seed=seed)
     model = train_linear_regression(x_train.fillna(0).values, y_train.values)
     model_prediction_val = predict(x_val, model)
     model_rmse = rmse(y_val.values, model_prediction_val)
-    rmses_seeds[seed] = model_rmse
-deviation = np.std([value for value in rmses_seeds.values()])
+    rmse_per_seed[seed] = model_rmse
+deviation = np.std([value for value in rmse_per_seed.values()])
 print(deviation)
 
 # %% Q6 - Split the dataset like previously, use seed 9.
