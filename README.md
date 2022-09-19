@@ -1,6 +1,7 @@
 # Machine Learning Engineering Zoomcamp 2022
 
 [![DeepNote][deepnote_logo]][introduction_notebook]
+[![Streamlit][streamlit_logo]][streamlit_app]
 
 This repository contains my scripts, answers & solutions to the Machine Learning Zoomcamp 2022, 
 a hands-on Machine Learning course, based on the Machine Learning Bookcamp book, by [Alexey Grigorev](https://github.com/alexeygrigorev). 
@@ -36,7 +37,9 @@ Find the original repository [here][zoomcamp_repo].
 
 <!-- MARKDOWN LINKS -->
 [deepnote_logo]: https://img.shields.io/badge/Launch%20Deepnote-3793EF?style=for-the-badge&logo=Deepnote&logoColor=white
+[streamlit_logo]: https://img.shields.io/badge/Launch%20Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white
 [deepnote_project]: https://deepnote.com/workspace/jxareas-8105-02fbc958-ba4f-4c14-bbe9-027265ebe5a2/project/Machine-Learning-Zoomcamp-2022-53236a30-134b-4aa8-bb58-983e8015d3a4
+[streamlit_app]: https://jxareas-machine-learning-bookcamp-2022-streamlithome-str-prpzud.streamlitapp.com/
 [introduction_notebook]: https://deepnote.com/workspace/jxareas-8105-02fbc958-ba4f-4c14-bbe9-027265ebe5a2/project/Machine-Learning-Zoomcamp-Answers-53236a30-134b-4aa8-bb58-983e8015d3a4/notebook/Homework%201%20-%20Solutions-07cb52fc47da4f669a0c77d32663c4d1
 [regression_notebook]: https://deepnote.com/workspace/jxareas-8105-02fbc958-ba4f-4c14-bbe9-027265ebe5a2/project/Machine-Learning-Zoomcamp-Answers-53236a30-134b-4aa8-bb58-983e8015d3a4/notebook/Homework%202-f436b1d38e154867aecf4363d0d01d1a
 [zoomcamp_repo]: https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp
