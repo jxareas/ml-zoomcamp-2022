@@ -1,7 +1,7 @@
 # Introduction to Machine Learning
 
 [![DeepNote][deepnote_logo]][introduction_notebook]
-[![DeepNote][python_logo]][introduction_script]
+[![Python][python_logo]][introduction_script]
 
 This is an introductory chapter, meant to define what machine learning is,
 some common tools used in machine learning and the workflow of a
@@ -15,7 +15,7 @@ Here are some of the topics covered by this chapter:
 * Performing **model validation**
 * Introduction to **NumPy** and **Pandas**
 
-You can get the solutions as a Jupyter Notebook in [Deepnote][introduction_notebook].
+You can get the solutions as Jupyter Notebooks in [Deepnote][introduction_notebook]
 or as a [Python file][introduction_script].
 
 ![ML ZoomCamp](https://github.com/jxareas/Machine-Learning-Bookcamp-2022/raw/master/images/zoomcamp.jpg)
