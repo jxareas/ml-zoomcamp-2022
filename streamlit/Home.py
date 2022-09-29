@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 from utils import lottie
 from streamlit_lottie import st_lottie
 

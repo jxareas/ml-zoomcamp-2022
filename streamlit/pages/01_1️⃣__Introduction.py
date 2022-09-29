@@ -1,8 +1,7 @@
 import streamlit as st
-import subprocess
-import io
 import pandas as pd
 import numpy as np
+from utils.streamlit_utils import separator, top_header
 
 st.set_page_config(layout="wide")
 
@@ -18,47 +17,53 @@ def get_dataframe(data_url):
 st.title("Homework 1: Introduction to Machine Learning")
 st.write(
     "This homework is mostly about basic data wrangling with Pandas & Numpy, as well as some elementary Linear Algebra operations, like matrix multiplication, transpose and the dot product.")
-st.write("---")
+separator()
 st.subheader("Data Preview: ")
 
 df = get_dataframe(url)
 st.dataframe(df)
+separator()
 
 # %% Question 1
-st.subheader("Q1: What's the version of numpy you have installed?")
+top_header("Question 1:", "What's the version of numpy you have installed?")
 
 st.code(">>> np.__version__")
 st.code(np.__version__)
+separator()
 
 # %% Question 2
-st.subheader("Q2: How many records are in the dataset?")
+top_header("Question 2:", "How many records are in the dataset?")
 
 st.code(">>> len(df)")
 st.code(len(df))
+separator()
 
 # %% Question 3
-st.subheader("Q3: Who are the most frequent car manufacturers (top 3) according")
+top_header("Question 3:", "Who are the most frequent car manufacturers (top 3) according")
 
 st.code(">>> df['Make'].value_counts().nlargest(3)")
 st.code(df['Make'].value_counts().nlargest(3))
+separator()
 
 # %% Question 4
-st.subheader("Q4: What's the number of unique Audi car models in the dataset?")
+top_header("Question 4:", "What's the number of unique Audi car models in the dataset?")
 
 st.code(">>> df[df.Make == 'Audi'].Model.nunique()")
 st.code(df[df.Make == 'Audi'].Model.nunique())
+separator()
 
 # %% Question 5
-st.subheader("Q5: How many columns in the dataset have missing values?")
+top_header("Question 5:", "How many columns in the dataset have missing values?")
 
 st.code("""
 >>> missing_values_per_column = df.isna().sum()
 >>> len(missing_values_per_column[missing_values_per_column > 0])  
 """)
 st.code(sum(df.isna().sum(axis=0) > 0))
+separator()
 
 # %% Question 6
-st.subheader("Q6: Does the median value change after filling missing values?")
+top_header("Question 6:", "Does the median value change after filling missing values?")
 
 median_before = df["Engine Cylinders"].median()
 most_frequent_value = df["Engine Cylinders"].mode()
@@ -81,9 +86,10 @@ st.code("""
 >>> print(initial_median != final_median)  # False, both medians are the same
 """)
 st.code(median_before != median_after)
+separator()
 
 # %% Question 7
-st.subheader("Q7: Value of the first element of w")
+top_header("Question 7:", "What's the value of the first element of w?")
 
 lotus_df = df.loc[df['Make'] == "Lotus", ["Engine HP", "Engine Cylinders"]]
 lotus_without_duplicates = lotus_df.drop_duplicates()
