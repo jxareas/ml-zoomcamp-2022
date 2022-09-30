@@ -2,21 +2,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly_express as px
-from utils.streamlit_utils import top_question, separator, top_header
+from utils.streamlit_utils import top_question, br, top_header
 from utils import validation_framework as val
 
 st.set_page_config(layout="wide")
 
 url = "https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv"
 
-
-@st.cache
-def get_dataframe(data_url):
-    data = pd.read_csv(url)
-    return data
-
-
-st.title("Homework 2 : Machine Learning for Regression")
+st.title("Homework 2: Machine Learning for Regression")
 st.markdown("""
 This is a chapter that explores the theme of Regression in Machine Learning.
 All algorithms in this chapter are implemented manually, using Linear Algebra knowledge.
@@ -28,19 +21,19 @@ Here are some of the topics covered by this chapter:
 * Applying **Tikhonov Regularization** to a Linear Regression model.
 * Using **random seeds** in order to control reproducibility
 """)
-separator()
+br()
 st.subheader("Data Preview: ")
 
-df = get_dataframe(url)
+df = pd.read_csv(url)
 st.dataframe(df)
-separator()
+br()
 
 # %% Exploratory Data Analysis
 top_header("Exploratory Data Analysis", "Does the `median_house_value` variable have a long tail?")
 histogram_figure = px.histogram(data_frame=df, x="median_house_value", template="ggplot2")
 st.plotly_chart(histogram_figure)
 st.markdown("We can appreciate the distribution of the `median_house_value` is skewed to the right.")
-separator()
+br()
 
 # %% Feature Selection
 
@@ -60,7 +53,7 @@ columns = ['latitude', 'longitude', 'housing_median_age', 'total_rooms', 'total_
            'median_income', 'median_house_value']
 df['median_house_value_log'] = np.log1p(df.median_house_value)
 st.write(df[columns].head(5))
-separator()
+br()
 
 # %% Question 1
 top_question(1, "Find a feature with missing values. How many missing values does it have?")
@@ -70,7 +63,7 @@ st.code("""
 >>> na_per_column[na_per_column > 0]
 """)
 st.code(df.isna().sum(axis=0))
-separator()
+br()
 
 # %% Question 2
 top_question(2, "What's the median (50% percentile) for variable population?")
@@ -80,7 +73,7 @@ st.code("""
 >>> population_median
 """)
 st.code(np.median(df.population))
-separator()
+br()
 
 # %% Prepare the Validation Framework
 st.subheader("Preparing the Validation Framework")
@@ -161,7 +154,7 @@ def rmse(y, y_hat):
     mean_squared_error = np.mean(squared_errors)
     return np.sqrt(mean_squared_error)
 """)
-separator()
+br()
 
 # %% Question 3
 
@@ -252,7 +245,7 @@ for multiplier in multipliers:
     rmse_per_multiplier[multiplier] = model_rmse
 
 st.code({key: round(value, 2) for key, value in rmse_per_multiplier.items()})
-separator()
+br()
 
 # %% Question 5
 top_question(5, "Compute the standard deviation of RMSE scores")
@@ -293,7 +286,7 @@ for seed in seeds:
     rmse_per_seed[seed] = model_rmse
 deviation = np.std([value for value in rmse_per_seed.values()])
 st.code(round(deviation, 3))
-separator()
+br()
 
 # %% Question 6
 top_question(6, "Compute the Test RMSE")

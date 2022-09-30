@@ -12,5 +12,5 @@ def top_question(question_number, title):
     st.subheader(title)
 
 
-def separator():
+def br():
     return st.write("---")
