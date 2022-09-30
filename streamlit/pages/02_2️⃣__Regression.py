@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly_express as px
-from utils.streamlit_utils import top_question, br, top_header
+from utils.streamlit_utils import top_question, br, top_header, get_dataframe
 from utils import validation_framework as val
 
 st.set_page_config(layout="wide")
@@ -24,8 +24,8 @@ Here are some of the topics covered by this chapter:
 br()
 st.subheader("Data Preview: ")
 
-df = pd.read_csv(url)
-st.dataframe(df)
+df = get_dataframe(url)
+st.dataframe(df.head())
 br()
 
 # %% Exploratory Data Analysis

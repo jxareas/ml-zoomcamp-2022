@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegression, Ridge
 import pandas as pd
 import numpy as np
 import streamlit as st
-from utils.streamlit_utils import top_question, br
+from utils.streamlit_utils import top_question, br, get_dataframe
 
 custom_seed = 42
 st.set_page_config(layout="wide")
@@ -26,8 +26,8 @@ Here are some of the topics covered by this chapter:
 br()
 st.subheader("Data Preview: ")
 
-df = pd.read_csv(url)
-st.dataframe(df)
+df = get_dataframe(url)
+st.dataframe(df.head())
 br()
 
 # %% Question 1

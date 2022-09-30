@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from utils.streamlit_utils import top_question, br
+from utils.streamlit_utils import top_question, br, get_dataframe
 
 st.set_page_config(layout="wide")
 
@@ -13,8 +13,9 @@ st.write(
 br()
 st.subheader("Data Preview: ")
 
-df = pd.read_csv(url)
-st.dataframe(df)
+
+df = get_dataframe(url)
+st.dataframe(df.head())
 br()
 
 # %% Question 1
