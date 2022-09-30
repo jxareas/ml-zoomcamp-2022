@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from utils.streamlit_utils import separator, top_header
+from utils.streamlit_utils import top_question, separator
 
 st.set_page_config(layout="wide")
 
@@ -25,35 +25,35 @@ st.dataframe(df)
 separator()
 
 # %% Question 1
-top_header("Question 1:", "What's the version of numpy you have installed?")
+top_question(1, "What's the version of numpy you have installed?")
 
 st.code(">>> np.__version__")
 st.code(np.__version__)
 separator()
 
 # %% Question 2
-top_header("Question 2:", "How many records are in the dataset?")
+top_question(2, "How many records are in the dataset?")
 
 st.code(">>> len(df)")
 st.code(len(df))
 separator()
 
 # %% Question 3
-top_header("Question 3:", "Who are the most frequent car manufacturers (top 3) according")
+top_question(3, "Who are the most frequent car manufacturers (top 3) according")
 
 st.code(">>> df['Make'].value_counts().nlargest(3)")
 st.code(df['Make'].value_counts().nlargest(3))
 separator()
 
 # %% Question 4
-top_header("Question 4:", "What's the number of unique Audi car models in the dataset?")
+top_question(4, "What's the number of unique Audi car models in the dataset?")
 
 st.code(">>> df[df.Make == 'Audi'].Model.nunique()")
 st.code(df[df.Make == 'Audi'].Model.nunique())
 separator()
 
 # %% Question 5
-top_header("Question 5:", "How many columns in the dataset have missing values?")
+top_question(5, "How many columns in the dataset have missing values?")
 
 st.code("""
 >>> missing_values_per_column = df.isna().sum()
@@ -63,7 +63,7 @@ st.code(sum(df.isna().sum(axis=0) > 0))
 separator()
 
 # %% Question 6
-top_header("Question 6:", "Does the median value change after filling missing values?")
+top_question(6, "Does the median value change after filling missing values?")
 
 median_before = df["Engine Cylinders"].median()
 most_frequent_value = df["Engine Cylinders"].mode()
@@ -89,7 +89,7 @@ st.code(median_before != median_after)
 separator()
 
 # %% Question 7
-top_header("Question 7:", "What's the value of the first element of w?")
+top_question(7, "What's the value of the first element of w?")
 
 lotus_df = df.loc[df['Make'] == "Lotus", ["Engine HP", "Engine Cylinders"]]
 lotus_without_duplicates = lotus_df.drop_duplicates()
