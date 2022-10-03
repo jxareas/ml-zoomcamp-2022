@@ -211,4 +211,4 @@ for c in [0.01, 0.1, 1, 10]:
     data = pd.DataFrame([{'param': c, 'mean': np.mean(scores).round(3), 'sd': np.std(scores).round(3)}])
     fold_stats = pd.concat([fold_stats, data])
 
-print(fold_stats) # The best c is the default value 1
+print(fold_stats)  # The best c is the default value 1
