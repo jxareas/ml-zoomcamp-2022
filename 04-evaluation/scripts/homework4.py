@@ -102,32 +102,42 @@ y_pred = predict(df_val, dv, model)
 # Calculating the area under the ROC curve
 roc_auc_score(y_val, y_pred)
 
+
 # %% Q3 - Computing Precision and Recall for our Model.
 # Evaluate the model on the validation dataset on all thresholds from 0.0 to 1.0 with step 0.01
 # For each threshold, compute precision and recall
 # Plot them
 # At which threshold precision and recall curves intersect?
-thresholds = np.arange(0.0, 1.0, 0.01)
-scores = []
-for threshold in thresholds:
-    real_positive = (y_val == 1)
-    real_negative = (y_val == 0)
+def scores_dataframe(y_val, y_pred):
+    scores = []
 
-    predict_positive = (y_pred >= threshold)
-    predict_negative = (y_pred < threshold)
+    thresholds = np.linspace(0, 1, 101)
 
-    tp = (predict_positive & real_positive).sum()
-    tn = (predict_negative & real_negative).sum()
+    for t in thresholds:
+        actual_positive = (y_val == 1)
+        actual_negative = (y_val == 0)
 
-    fp = (predict_positive & real_negative).sum()
-    fn = (predict_negative & real_positive).sum()
+        predict_positive = (y_pred >= t)
+        predict_negative = (y_pred < t)
 
-    precision = tp / (tp + fp)
-    recall = tp / (tp + fn)
+        tp = (predict_positive & actual_positive).sum()
+        tn = (predict_negative & actual_negative).sum()
 
-    scores.append((threshold, precision, recall))
+        fp = (predict_positive & actual_negative).sum()
+        fn = (predict_negative & actual_positive).sum()
 
-scores = pd.DataFrame(scores, columns={'threshold', 'precision', 'recall'})
+        scores.append((t, tp, fp, fn, tn))
+
+    columns = ['threshold', 'tp', 'fp', 'fn', 'tn']
+    df_scores = pd.DataFrame(scores, columns=columns)
+
+    df_scores['precision'] = df_scores.tp / (df_scores.tp + df_scores.fp)
+    df_scores['recall'] = df_scores.tp / (df_scores.tp + df_scores.fn)
+
+    return df_scores
+
+
+scores = scores_dataframe(y_val, y_pred)
 # Plotting the data
 plt.plot(scores.threshold, scores.precision, label='Precision')  # Thresholds vs Precision
 plt.plot(scores.threshold, scores.recall, label='Recall')  # Thresholds vs Recall
