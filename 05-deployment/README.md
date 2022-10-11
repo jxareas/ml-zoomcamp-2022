@@ -26,8 +26,6 @@ at the [Flask App][flask_app].
 
 [flask_logo]: https://img.shields.io/badge/Get%20Flask%20App-%23000.svg?style=for-the-badge&logo=flask&logoColor=whit
 
-[streamlit_logo]: https://img.shields.io/badge/Launch%20on%20Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white
+[deployment_notebook]: https://deepnote.com/workspace/jxareas-8105-02fbc958-ba4f-4c14-bbe9-027265ebe5a2/project/Machine-Learning-Zoomcamp-2022-53236a30-134b-4aa8-bb58-983e8015d3a4/notebook/Homework%205-15a3ead86fd44a2993cd155ec06833af
 
-[deployment_notebook]: https://deepnote.com/workspace/jxareas-8105-02fbc958-ba4f-4c14-bbe9-027265ebe5a2/project/Machine-Learning-Zoomcamp-2022-53236a30-134b-4aa8-bb58-983e8015d3a4/notebook/Homework%204-2-a1b6c905bfb74fa0a95c678901a812d4
-
-[flask_app]: https://github.com/jxareas/Machine-Learning-Bookcamp-2022/blob/master/04-evaluation/scripts/homework4.py
+[flask_app]: https://github.com/jxareas/Machine-Learning-Bookcamp-2022/tree/master/05-deployment/ChurnPredictionApp
