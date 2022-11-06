@@ -75,7 +75,7 @@ del home_values, job_values, marital_values, records_values, status_values, cate
 # %% Train-Test Validation Split
 
 df_full_train, df_test = train_test_split(df, test_size=0.2, random_state=11)
-df_train, df_validation = train_test_split(df, test_size=0.25, random_state=11)
+df_train, df_validation = train_test_split(df_full_train, test_size=0.25, random_state=11)
 
 df_train = df_train.reset_index(drop=True)
 df_test = df_test.reset_index(drop=True)
