@@ -116,7 +116,7 @@ trained_models = pd.read_feather('../data/trained_models.feather')
 trained_models['rmse'] = np.sqrt(trained_models.mse)
 
 for depth in [10, 15, 20, 25]:
-    df_subset = trained_models[df_scores.max_depth == depth]
+    df_subset = trained_models[trained_models.max_depth == depth]
     plt.plot(df_subset.n_estimators, df_subset.rmse,
              label=depth)
 
@@ -202,7 +202,7 @@ xgb_params = {
     'verbosity': 1,
 }
 
-model = xgb.train(xgb_params, dtrain, num_boost_round=100,
+model1 = xgb.train(xgb_params, dtrain, num_boost_round=100,
                   verbose_eval=5, evals=watchlist)
 xgb_params = {
     'eta': 0.1,
@@ -216,8 +216,15 @@ xgb_params = {
     'verbosity': 1,
 }
 
-model = xgb.train(xgb_params, dtrain, num_boost_round=100,
+model2 = xgb.train(xgb_params, dtrain, num_boost_round=100,
                   verbose_eval=5, evals=watchlist)
 
 # Which eta leads to the best RMSE score on the validation dataset?
-# 0.3
+y_pred_1 = model1.predict(dval)
+mse1 = mean_squared_error(y_validation, y_pred_1)
+print(f"MSE1: {mse1}")
+
+y_pred_2 = model2.predict(dval)
+mse2 = mean_squared_error(y_validation, y_pred_2)
+print(f"MSE2: {mse2}")
+# Both
