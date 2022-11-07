@@ -20,8 +20,8 @@ in the [Streamlit App][streamlit_app].
 | 03  | Machine Learning for Classification   | :white_check_mark: | 26/09/2022   | [Classification][classification_notebook] |
 | 04  | Evaluation Metrics for Classification | :white_check_mark: | 03/10/2022   | [Evaluation][evaluation_notebook]         |
 | 05  | Deploying Machine Learning Models     | :white_check_mark: | 10/10/2022   | [Deployment][deployment_notebook]         |
-| 06  | Decision Trees and Ensemble Learning  | :x:                | 17/10/2022   | [Trees][trees_notebook]                   |
-| 07  | BentoML                               | :x:                | 24/10/2022   | BentoML                                   |
+| 06  | Decision Trees and Ensemble Learning  | :white_check_mark: | 17/10/2022   | [Trees][trees_notebook]                   |
+| 07  | BentoML                               | :white_check_mark: | 24/10/2022   | BentoML                                   |
 | 7b  | Midterm Project                       | :x:                | 07/11/2022   | MidTerm-Project                           |
 | 7b  | Midterm Project Evaluation            | :x:                | 14/11/2022   | MidTerm-Project                           |
 | 08  | Neural Networks and Deep Learning     | :x:                | 21/11/2022   | Deep Learning                             |
