@@ -1,0 +1,10 @@
+service: "service.py:svc"
+labels:
+  owner: Jon Areas
+  project: Credit Risk
+include:
+  - ".py"
+python:
+  packages:
+    - xgboost
+    - sklearn
