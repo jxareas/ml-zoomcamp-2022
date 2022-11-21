@@ -21,9 +21,9 @@ in the [Streamlit App][streamlit_app].
 | 04  | Evaluation Metrics for Classification | :white_check_mark: | 03/10/2022   | [Evaluation][evaluation_notebook]         |
 | 05  | Deploying Machine Learning Models     | :white_check_mark: | 10/10/2022   | [Deployment][deployment_notebook]         |
 | 06  | Decision Trees and Ensemble Learning  | :white_check_mark: | 17/10/2022   | [Trees][trees_notebook]                   |
-| 07  | BentoML                               | :white_check_mark: | 24/10/2022   | BentoML                                   |
-| 7b  | Midterm Project                       | :x:                | 07/11/2022   | MidTerm-Project                           |
-| 7b  | Midterm Project Evaluation            | :x:                | 14/11/2022   | MidTerm-Project                           |
+| 07  | BentoML                               | :white_check_mark: | 24/10/2022   | [BentoML][bentoml_notebook]               |
+| 7b  | Midterm Project                       | :white_check_mark: | 07/11/2022   | MidTerm-Project                           |
+| 7b  | Midterm Project Evaluation            | :white_check_mark: | 14/11/2022   | MidTerm-Project                           |
 | 08  | Neural Networks and Deep Learning     | :x:                | 21/11/2022   | Deep Learning                             |
 | 09  | Serverless Deep Learning              | :x:                | 28/11/2022   | Serverless                                |
 | 10  | Kubernetes and TensorFlow-Serving     | :x:                | 05/12/2022   | Kubernetes                                |
@@ -47,5 +47,6 @@ Find the original repository [here][zoomcamp_repo].
 [evaluation_notebook]: https://deepnote.com/workspace/jxareas-8105-02fbc958-ba4f-4c14-bbe9-027265ebe5a2/project/Machine-Learning-Zoomcamp-2022-53236a30-134b-4aa8-bb58-983e8015d3a4/notebook/Homework%204-2-a1b6c905bfb74fa0a95c678901a812d4
 [deployment_notebook]: https://deepnote.com/workspace/jxareas-8105-02fbc958-ba4f-4c14-bbe9-027265ebe5a2/project/Machine-Learning-Zoomcamp-2022-53236a30-134b-4aa8-bb58-983e8015d3a4/notebook/Homework%205-15a3ead86fd44a2993cd155ec06833af
 [trees_notebook]: https://deepnote.com/workspace/jxareas-8105-02fbc958-ba4f-4c14-bbe9-027265ebe5a2/project/Machine-Learning-Zoomcamp-2022-53236a30-134b-4aa8-bb58-983e8015d3a4/notebook/Homework%206-cddf3033c38b41a0b103de798a630536
+[bentoml_notebook]: https://deepnote.com/workspace/jxareas-8105-02fbc958-ba4f-4c14-bbe9-027265ebe5a2/project/Machine-Learning-Zoomcamp-2022-53236a30-134b-4aa8-bb58-983e8015d3a4/notebook/Homework%207-45b4aa19ea284f4abe0669dde8eb02c5
 [zoomcamp_repo]: https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp
 [al_github]: https://github.com/alexeygrigorev
