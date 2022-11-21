@@ -1,0 +1,10 @@
+service: "predict.py:svc"
+labels:
+  owner: Jon Areas
+  project: phone_price_predictor
+include:
+- "*.py"
+python:
+  packages:
+    - xgboost
+    - sklearn
